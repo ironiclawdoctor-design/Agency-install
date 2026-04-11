@@ -1,0 +1,94 @@
+{
+  "monitoring_id": "FWM-20260411140743",
+  "timestamp": "2026-04-11T14:07:43.035854+00:00",
+  "weaknesses_monitored": [
+    "traditional_financial_api_blocking",
+    "selective_service_restrictions"
+  ],
+  "results": {
+    "basic_connectivity": {
+      "test": "basic_connectivity",
+      "status": "working",
+      "details": "basic_internet_connectivity_ok",
+      "output": "PING 8.8.8.8 (8.8.8.8) 56(84) bytes of data.\n64 bytes from 8.8.8.8: icmp_seq=1 ttl=115 time=4.08 ms\n"
+    },
+    "api_tests": [
+      {
+        "api": "coingecko",
+        "category": "crypto",
+        "url": "https://api.coingecko.com/api/v3/ping",
+        "start_time": 1775916464.0425792,
+        "status": "working",
+        "duration_seconds": 0.187,
+        "response_preview": "{\"gecko_says\":\"(V3) To the Moon!\"}",
+        "http_status": 200
+      },
+      {
+        "api": "exchangerate",
+        "category": "general",
+        "url": "https://api.exchangerate-api.com/v4/latest/USD",
+        "start_time": 1775916464.2291367,
+        "status": "working",
+        "duration_seconds": 0.502,
+        "response_preview": "{\"provider\":\"https://www.exchangerate-api.com\",\"WARNING_UPGRADE_TO_V6\":\"https://www.exchangerate-api",
+        "http_status": 200
+      },
+      {
+        "api": "bloomberg",
+        "category": "general_finance",
+        "url": "https://www.bloomberg.com/markets",
+        "start_time": 1775916464.7316253,
+        "status": "working",
+        "duration_seconds": 1.246,
+        "response_preview": "<!DOCTYPE html><html lang=\"en\"><head><meta charSet=\"utf-8\"/><meta name=\"viewport\" content=\"width=dev",
+        "http_status": 200
+      },
+      {
+        "api": "yahoo_finance",
+        "category": "traditional_finance",
+        "url": "https://query1.finance.yahoo.com/v8/finance/chart/%5EGSPC",
+        "start_time": 1775916465.9779356,
+        "status": "working",
+        "duration_seconds": 0.089,
+        "response_preview": "{\"chart\":{\"result\":[{\"meta\":{\"currency\":\"USD\",\"symbol\":\"^GSPC\",\"exchangeName\":\"SNP\",\"fullExchangeNam",
+        "http_status": 200
+      },
+      {
+        "api": "coincap",
+        "category": "crypto_finance",
+        "url": "https://api.coincap.io/v2/assets/bitcoin",
+        "start_time": 1775916466.066684,
+        "status": "connection_error",
+        "duration_seconds": 0.002,
+        "error": "[Errno -2] Name or service not known"
+      },
+      {
+        "api": "nasdaq",
+        "category": "traditional_finance",
+        "url": "https://www.nasdaq.com",
+        "start_time": 1775916466.068601,
+        "status": "working",
+        "duration_seconds": 1.06,
+        "response_preview": "<!DOCTYPE html><html lang=\"en\" dir=\"ltr\" prefix=\"og: https://ogp.me/ns#\"><head>\n  <link rel=\"preconn",
+        "http_status": 200
+      }
+    ],
+    "weakness_traditional_blocking": {
+      "weakness": "traditional_financial_api_blocking",
+      "detected": false,
+      "blocking_ratio": 0.0,
+      "blocked_count": 0,
+      "total_tests": 2,
+      "blocked_apis": []
+    },
+    "weakness_selective_restrictions": {
+      "weakness": "selective_service_restrictions",
+      "crypto_accessible": true,
+      "general_web_accessible": true,
+      "traditional_finance_blocked": false,
+      "crypto_finance_blocked": true,
+      "detected": true,
+      "pattern": "selective_blocking_detected"
+    }
+  }
+}

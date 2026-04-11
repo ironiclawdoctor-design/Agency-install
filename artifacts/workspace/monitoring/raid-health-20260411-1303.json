@@ -1,0 +1,12 @@
+{
+  "timestamp": "2026-04-11T13:03:57Z",
+  "check": "raid_health",
+  "status": "success",
+  "details": {
+    "master_shards": "all_present",
+    "node_integrity": "all_nodes_ok",
+    "redundancy": "all_shards_at_least_one_node",
+    "reconstruction": "successful_hash_match"
+  },
+  "output": "=== Agency RAID Health Check ===\nTime: Sat Apr 11 13:03:57 UTC 2026\n\n1. Master shard integrity:\n  ✅ shard_00.dat: 351237 bytes\n  ✅ shard_01.dat: 351237 bytes\n  ✅ shard_02.dat: 351237 bytes\n  ✅ shard_03.dat: 351237 bytes\n  ✅ shard_parity.dat: 351237 bytes\n\n=== Node Integrity Check ===\n\nalpha:\n  ✅ All expected shards present\n\nbeta:\n  ✅ All expected shards present\n\ngamma:\n  ✅ All expected shards present\n\ndelta:\n  ✅ All expected shards present\n\n=== Redundancy Analysis ===\n  shard_01.dat: 2 locations → alpha, delta\n  shard_03.dat: 1 locations → beta\n  shard_parity.dat: 2 locations → gamma, delta\n  shard_00.dat: 2 locations → alpha, gamma\n  shard_02.dat: 2 locations → beta, delta\n\n✅ All shards exist in at least one node.\n\n✅ Distribution appears recoverable for single‑node loss.\n\n\n=== Reconstruction Test ===\n✅ Reconstruction successful\n✅ Hash matches metadata\n\n=== Health check complete ==="
+}
